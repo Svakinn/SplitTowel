@@ -7,9 +7,9 @@ The purpose of this version is to make clear split between the client-html/javas
 The client part is now static web that makes it much easier to deploy the solution and even deploy the client and server on separate servers.  
 For example it is now possible to deploy the client inside another web or even place it within content management system running on PHP on Linux.
 
-Corse:
+Cors:
 ------
-The server side web-api now includes corse handling to enable the client and server to run on separate websites.
+The server side web-api now includes cors handling (Cross-origin resource sharing) to enable the client and server to run on separate websites.
 
 Bundling:
 ---------
