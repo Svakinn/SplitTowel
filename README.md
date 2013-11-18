@@ -34,7 +34,7 @@ Requirements:
 
 Durandal Weyland Compile (Optional)
 -----------------------------------
-Would you like to build the project into just 4 files?  
+Would you like to build the client project into just 5 files?  
 Well you can do that using the Durandal weyland compile to compile the entire App directory plus the required Durandal scripts into one file.
 To do this you need to install **node.js** and the **weyland package** for node.js.  
 *Note: you only have to do the following set-up process if you intend to modify the project and compile the changes for weyland. You can still run the original weyland file that ships with the project by running the index_weyland.html page.*   
@@ -52,7 +52,7 @@ The 3 index files:
 The project includes 3 index html files.  Those are identical except they refer different CSS and JavaScripts:  
 1. **index.html** - this is the debug version that includes each CSS and js file individually.  
 2. **index_bundle.html** - this is the version that uses the bundled CSS and js files. What you would use for your deployment.  
-3. **index_weyland.html** - this is the weyland compiled version.  This will cause the browser to load only 4 different files from the client!!:
+3. **index_weyland.html** - this is the weyland compiled version.  This will cause the browser to load only 5 different files from the client!!:
 The index page - index_weyland.html, bundled CSS file - /incl/splittowel.min.css, bundled javascript library file - /incl/splittowel.min.js, the Durandal app file - /App/main-built.js and the Durandal icon - /Content/images/icon.png
 
 Small tip:
