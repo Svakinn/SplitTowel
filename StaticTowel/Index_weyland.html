@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!--This is the web page you want to use for debugging and development  -->
+<!--This intex page uses the css and javascript bundles.  This is the same set-up as you would use for deployment  -->
 <html>
 <head>
     <title>Split Towel SPA</title>
@@ -10,12 +10,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="/Content/ie10mobile.css" rel="stylesheet" />
-    <link href="/Content/bootstrap.css" rel="stylesheet" />
-    <link href="/Content/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="/Content/durandal.css" rel="stylesheet" />
-    <link href="/Content/toastr.css" rel="stylesheet" />
-    <link href="/Content/app.css" rel="stylesheet" />
+    <link href="/incl/splittowel.min.css?1" rel="stylesheet" />
 
     <script type="text/javascript">
         if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -37,14 +32,7 @@
         </div>
     </div>
 
-    <script src="/scripts/jquery-1.9.1.js"></script>
-    <script src="/scripts/knockout-2.3.0.debug.js"></script>
-    <script src="/scripts/toastr.js"></script>
-    <script src="/scripts/Q.js"></script>
-    <script src="/scripts/breeze.debug.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
-    <script src="/scripts/moment.js"></script>
-
-    <script src="/Scripts/require.js" data-main="/App/main"></script>
+    <script src="/incl/splittowel.min.js?1"></script>
+    <script src="/App/main-built.js"></script>
 </body>
 </html>

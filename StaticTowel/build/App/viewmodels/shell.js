@@ -1,0 +1,1 @@
+define(["require","exports","base/app","plugins/router"],function(e,t,o,i){function n(){return r.cspMain.boot()}var r=o,s=i,a={activate:n,router:s,app:r.cspMain};return a});

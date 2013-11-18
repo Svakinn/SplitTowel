@@ -85,6 +85,7 @@
     <Content Include="App\config.js">
       <DependentUpon>config.ts</DependentUpon>
     </Content>
+    <Content Include="App\main-built.js" />
     <Content Include="App\main.js">
       <DependentUpon>main.ts</DependentUpon>
     </Content>
@@ -127,6 +128,7 @@
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="Index_weyland.html" />
     <Content Include="incl\readme.txt" />
     <Content Include="incl\splittowel.css" />
     <Content Include="incl\splittowel.js" />
@@ -234,7 +236,15 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)bundler\node.exe "$(ProjectDir)bundler\bundler.js" "$(ProjectDir)incl"</PostBuildEvent>
+    <PostBuildEvent>--$(ProjectDir)weyland build
+$(ProjectDir)bundler\node.exe "$(ProjectDir)bundler\bundler.js" "$(ProjectDir)incl"
+
+
+</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	   Other similar extension points exist, see Microsoft.Common.targets.
