@@ -13,7 +13,8 @@ The web.config file in the WebAPI project includes section to set-up the client 
 
 Bundling:
 ---------
-Instead of using the .Net Web Optimization Framework, Hot Towel demonstrates, we now use open source bundler solution to bundle and minify CSS and JavaScripts when the web project is compiled.
+Instead of using the .Net Web Optimization Framework, Hot Towel demonstrates, we now use open source bundler solution to bundle and minify CSS and JavaScripts when the web project is compiled.  
+*Note: the build folder for the bundle ("bundler") is not visible from the project solution explorer. It is just a folder that ships with the solution.*
 
 App.ts:
 -------
@@ -36,14 +37,14 @@ Durandal Weyland Compile (Optional)
 Would you like to build the project into just 4 files?  
 Well you can do that using the Durandal weyland compile to compile the entire App directory plus the required Durandal scripts into one file.
 To do this you need to install **node.js** and the **weyland package** for node.js.  
-*Note: you only have to do the following set-up process if you intend to modify the project and compile the changes. You can still run the original weyland file that ships with the project by running the index_weyland.html page.*   
+*Note: you only have to do the following set-up process if you intend to modify the project and compile the changes for weyland. You can still run the original weyland file that ships with the project by running the index_weyland.html page.*   
 See here for directions for how to set-up weyland compile: [http://durandaljs.com/documentation/Building-with-Weyland/](http://durandaljs.com/documentation/Building-with-Weyland/ "Durandal weyland documentation")  
 The node.js can be installed from here:
 [http://nodejs.org/download/](http://nodejs.org/download/ "Download node.js")  
 Then install the weyland plugin by running the following command line:
 > npm install -g weyland  
 
-Finally uncomment the post-process weyland compile statement;![](Post-build.png)  
+Finally uncomment the post-build weyland command line: ![](Post-build.png)  
 *Note: do not reverse the order of the two commands since it will cause the weyland build to be run by wrong note.exe file.*
 
 The 3 index files:
