@@ -4,8 +4,7 @@ Split Towel
 This is a modified version of John Papa’s Hot Towel and the sister project TypeTowel (Hot Towel with TypeScript).
 
 The purpose of this version is to make clear split between the client-html/JavaScripts and the Web-API server.  
-The client part is now static web. This makes it much easier to deploy the client solution. The html-client and the Web-API server can be deployed on two different servers.  
-This set-up enables us to put the client inside another web, even place it within content management system running on PHP on Linux.
+The client part is now static web. This makes it much easier to deploy the client solution. The html-client and the Web-API server can be deployed on two different servers. For example we can now with little modification, place the client within content management system running on PHP on Linux.
 
 Cors:
 ------
@@ -44,7 +43,7 @@ The node.js can be installed from here:
 Then install the weyland plugin by running the following command line:
 > npm install -g weyland  
 
-Finally uncomment the post-process weyland compile statement;![](post-build.png)  
+Finally uncomment the post-process weyland compile statement;![](Post-build.png)  
 *Note: do not reverse the order of the two commands since it will cause the weyland build to be run by wrong note.exe file.*
 
 The 3 index files:
