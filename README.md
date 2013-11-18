@@ -50,9 +50,9 @@ The 3 index files:
 ------------------
 The project includes 3 index html files.  Those are identical except they refer different CSS and JavaScripts:  
 1. **index.html** - this is the debug version that includes each CSS and js file individually.  
-2. **index_bundle.html** - this is the version that uses the bundled CSS and js files. What you would youse for your deployment.  
+2. **index_bundle.html** - this is the version that uses the bundled CSS and js files. What you would use for your deployment.  
 3. **index_weyland.html** - this is the weyland compiled version.  This will cause the browser to load only 4 different files from the client!!:
-The index page - index_weyland.html, bundled CSS file - /incl/splittowel.min.css, bundled javascript library file - splittowel.min.js, the Durandal app file - /App/main-built.js and the Durandal icon - /Content/images/icon.png
+The index page - index_weyland.html, bundled CSS file - /incl/splittowel.min.css, bundled javascript library file - /incl/splittowel.min.js, the Durandal app file - /App/main-built.js and the Durandal icon - /Content/images/icon.png
 
 Small tip:
 ----------
