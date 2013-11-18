@@ -1,0 +1,7 @@
+﻿#options outputbundleonly
+ie10mobile.css
+bootstrap.css
+bootstrap-responsive.css
+durandal.css
+toastr.css
+app.css

@@ -14,7 +14,13 @@ The web.config file in the WebAPI project includes section to set-up the client 
 Bundling:
 ---------
 Instead of using the .Net Web Optimization Framework, Hot Towel demonstrates, we now use open source bundler solution to bundle and minify CSS and JavaScripts when the web project is compiled.  
-*Note: the build folder for the bundle ("bundler") is not visible from the project solution explorer. It is just a folder that ships with the solution.*
+*Note: the build folder for the bundle ("bundler") is not visible from the project solution explorer. It is just a folder that ships with the solution.*  
+You can run the bundler on "Post Build" of the project by using the following command line:  
+> call "$(ProjectDir)bundlebuild.cmd" "$(ProjectDir)"  
+
+However it is better run the bundler manually when you need it. For that the VSS-External Tools are handy.  Add the following command to the Studio by entering Tools->External Tools->Add:
+![External Tools Setup](ExternalToolsSetup.png)  
+
 
 App.ts:
 -------
@@ -44,8 +50,8 @@ The node.js can be installed from here:
 Then install the weyland plugin by running the following command line:
 > npm install -g weyland  
 
-Finally uncomment the post-build weyland command line: ![](Post-build.png)  
-*Note: do not reverse the order of the two commands since it will cause the weyland build to be run by wrong note.exe file.*
+Finally you can set-up execution of the weyland command file in VSS External tools:  
+![Weyland set-up](ExternalToolsWeyland.png)
 
 The 3 index files:
 ------------------
@@ -62,6 +68,6 @@ Remember that in Visual Studio you can set the start-page for web application:
 
 Tags:
 -----
-HotTowel, TypeTowel, Durandal, TypeScript, Cors, Web-API, Breeze, Bundling
+HotTowel, TypeTowel, Durandal, Weyland, TypeScript, Cors, Web-API, Breeze, Bundling
  
  

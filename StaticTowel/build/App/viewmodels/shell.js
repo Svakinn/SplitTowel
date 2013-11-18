@@ -1,1 +1,1 @@
-define(["require","exports","base/app","plugins/router"],function(e,t,o,i){function n(){return r.cspMain.boot()}var r=o,s=i,a={activate:n,router:s,app:r.cspMain};return a});
+define(["require","exports","base/app","plugins/router"],function(e,t,n,i){function r(){return o.cspMain.boot()}var o=n,a=i,s={activate:r,router:a,app:o.cspMain};return s});

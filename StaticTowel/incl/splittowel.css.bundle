@@ -1,8 +1,0 @@
-﻿#options outputbundleonly
-../Content/ie10mobile.css
-../Content/bootstrap.css
-../Content/bootstrap-responsive.css
-../Content/durandal.css
-../Content/toastr.css
-../Content/app.css
-

@@ -71,6 +71,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="weylandbuild.cmd" />
     <TypeScriptCompile Include="App\services\logger.ts" />
     <TypeScriptCompile Include="App\main.ts" />
     <TypeScriptCompile Include="App\config.ts" />
@@ -114,31 +115,32 @@
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
     <Content Include="App\views\shell.html" />
-    <Content Include="Content\app.css" />
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\durandal.css" />
-    <Content Include="Content\ie10mobile.css" />
+    <Content Include="Content\css\app.css" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\durandal.css" />
+    <Content Include="Content\css\ie10mobile.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
-    <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\css\toastr.css" />
+    <Content Include="Content\css\toastr.min.css" />
     <Content Include="Index_weyland.html" />
-    <Content Include="incl\readme.txt" />
-    <Content Include="incl\splittowel.css" />
-    <Content Include="incl\splittowel.js" />
-    <Content Include="incl\splittowel.min.css" />
-    <Content Include="incl\splittowel.min.js" />
+    <Content Include="Content\css\readme.txt" />
+    <Content Include="Content\css\splittowel.css" />
+    <Content Include="Content\js\splittowel.js" />
+    <Content Include="Content\css\splittowel.min.css" />
+    <Content Include="Content\js\splittowel.min.js" />
     <Content Include="Index_bundle.html" />
     <Content Include="Index.html" />
     <Content Include="Scripts\almond-custom.js" />
-    <Content Include="incl\splittowel.css.bundle" />
-    <Content Include="incl\splittowel.js.bundle" />
+    <Content Include="Content\css\splittowel.css.bundle" />
+    <Content Include="Content\js\splittowel.js.bundle" />
+    <Content Include="bundlebuild.cmd" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -183,7 +185,6 @@
     <Content Include="Scripts\typings\requirejs\require.d.ts" />
     <Content Include="Scripts\typings\toastr\toastr.d.ts" />
     <Content Include="weyland-config.js" />
-    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -208,7 +209,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\fonts\" />
+    <Folder Include="incl\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -236,10 +240,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>--$(ProjectDir)weyland build
-$(ProjectDir)bundler\node.exe "$(ProjectDir)bundler\bundler.js" "$(ProjectDir)incl"
-
-
+    <PostBuildEvent>echo "If you like you can bundle and weyland compile on post-build: call \"$(ProjectDir)weylandbuild.cmd\" \"$(ProjectDir)\"  and then call \"$(ProjectDir)bundlebuild.cmd\" \"$(ProjectDir)\""
+echo "Se readme.md on how to set up External Tool command to run bundle and or weyland manually"
 </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
