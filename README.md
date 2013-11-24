@@ -1,7 +1,7 @@
 Split Towel
 =======================
 
-This is a modified version of John Papa’s Hot Towel and the sister project TypeTowel (Hot Towel with TypeScript).
+This is a modified version of John Papa’s Hot Towel and this sister project TypeTowel (Hot Towel with TypeScript).
 
 The purpose of this version is to make clear split between the client-html/JavaScripts and the Web-API server.  
 The client part is now static web. This makes it much easier to deploy the client solution. The html-client and the Web-API server can be deployed on two different servers. For example we can now with little modification, place the client within content management system running on PHP on Linux.
@@ -13,12 +13,12 @@ The web.config file in the WebAPI project includes section to set-up the client 
 
 Bundling:
 ---------
-Instead of using the .Net Web Optimization Framework, Hot Towel demonstrates, we now use open source bundler solution to bundle and minify CSS and JavaScripts when the web project is compiled.  
+Instead of using the .Net Web Optimization Framework, Hot Towel demonstrates, we now use open source bundler solution to bundle and minify CSS and JavaScripts when the web project is compiled or manually by the programmer.  
 *Note: the build folder for the bundle ("bundler") is not visible from the project solution explorer. It is just a folder that ships with the solution.*  
 You can run the bundler on "Post Build" of the project by using the following command line:  
 > call "$(ProjectDir)bundlebuild.cmd" "$(ProjectDir)"  
 
-However it is better run the bundler manually when you need it. For that the VSS-External Tools are handy.  Add the following command to the Studio by entering Tools->External Tools->Add:
+However it is better run the bundler manually when you need it. For that the VS-External Tools are handy.  Add the following command to the Studio by entering Tools->External Tools->Add:
 ![External Tools Setup](ExternalToolsSetup.png)  
 
 
@@ -30,7 +30,11 @@ The app.ts also includes menu object to handle the main menu.
 Web-API 2:
 --------
 The Web-API has been updated to use Web-API 2 and Breeze server for Web-API 2  
-For demonstration the details page includes example of retrieving data (list of countries) from the Web-API.
+For demonstration the details page includes example of retrieving data (list of countries) from the Web-API.  
+
+Bootstrap 3:
+-----------
+This project has been upgraded to use Bootstrap 3 with some nice responsive features.
 
 Requirements: 
 -------------
@@ -50,7 +54,7 @@ The node.js can be installed from here:
 Then install the weyland plugin by running the following command line:
 > npm install -g weyland  
 
-Finally you can set-up execution of the weyland command file in VSS External tools:  
+Finally you can set-up execution of the weyland command file in VS External tools:  
 ![Weyland set-up](ExternalToolsWeyland.png)
 
 The 3 index files:
@@ -68,6 +72,6 @@ Remember that in Visual Studio you can set the start-page for web application:
 
 Tags:
 -----
-HotTowel, TypeTowel, Durandal, Weyland, TypeScript, Cors, Web-API, Breeze, Bundling
+HotTowel, TypeTowel, Durandal, Weyland, TypeScript, Cors, Web-API, Breeze, Bundling, Bootstrap
  
  

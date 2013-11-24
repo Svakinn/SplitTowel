@@ -21,7 +21,7 @@ html {
 body {
     font-size: 18px;
     margin: 0 auto;
-    max-width: 1100px;
+    max-width: none;
     background-color: transparent;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
@@ -32,9 +32,6 @@ h1, h2, h3 {
     color: #777;
 }
 
-section.main {
-    margin-top: 80px;
-}
 
 .navbar .brand {
     padding: 6px 30px 12px 30px;
@@ -46,7 +43,7 @@ h2.page-title {
     font-size: 32px;
 }
 
-.brand .title {
+.navbar-brand .title {
     float: left;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 145%;
@@ -131,11 +128,23 @@ footer span {
 /***************************/
 /* Boostrap overrides      */
 
-.navbar .btn, .navbar .btn-group {
-    margin-top: 16px;
+/*Get the same dropshadow look we used to get by default with bootstrap2*/
+.navbar {
+-webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-fixed-top .navbar-inner {
+/*Fix topbar content vertical alignment*/
+.navbar .btn-group{
+    margin-top: 14px;
+}
+.navbar .loader
+{
+    margin-top: 18px;
+}
+ 
+.navbar .navbar-header, .navbar .navbar-collapse {
     padding-left: 1em !important;
     padding-right: 1em !important;
     padding-top: 0;
@@ -169,16 +178,12 @@ footer span {
 
 .btn-info {
     background-color: #0081C2;
-    background-image: -moz-linear-gradient(top,#77CCFF,#194D7B);
-    background-image: -webkit-gradient(linear,0 0,0 100%,from(#77CCFF),to(#194D7B));
-    background-image: -webkit-linear-gradient(top,#77CCFF,#194D7B);
-    background-image: -o-linear-gradient(top,#77CCFF,#194D7B);
-    background-image: linear-gradient(to bottom,#77CCFF,#194D7B);
     background-repeat: repeat-x;
-    border-color: #77CCFF #2f96b4 #194D7B;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff77CCFF', endColorstr='#ff194D7B', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-image: linear-gradient(to bottom,#77CCFF,#194D7B);
+    border-left-color: #2f96b4;
+    border-right-color: #2f96b4;
+    border-top-color: #77CCFF;
+    border-bottom-color: #194D7B;
 }
 
     .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {

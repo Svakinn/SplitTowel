@@ -71,6 +71,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\js\html5shiv.min.3.7.0.js" />
+    <Content Include="Content\js\respond.min.1.3.0.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="weylandbuild.cmd" />
     <TypeScriptCompile Include="App\services\logger.ts" />
     <TypeScriptCompile Include="App\main.ts" />
@@ -109,22 +121,17 @@
     <Content Include="App\viewmodels\shell.js">
       <DependentUpon>shell.ts</DependentUpon>
     </Content>
-    <Content Include="App\views\navbs3.html" />
     <Content Include="App\views\details.html" />
     <Content Include="App\views\footer.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="Content\css\app.css" />
-    <Content Include="Content\css\bootstrap-responsive.css" />
-    <Content Include="Content\css\bootstrap-responsive.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\durandal.css" />
     <Content Include="Content\css\ie10mobile.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\durandal-icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\css\toastr.css" />
@@ -141,6 +148,12 @@
     <Content Include="Content\css\splittowel.css.bundle" />
     <Content Include="Content\js\splittowel.js.bundle" />
     <Content Include="bundlebuild.cmd" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -210,7 +223,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\fonts\" />
     <Folder Include="incl\" />
   </ItemGroup>
   <PropertyGroup>

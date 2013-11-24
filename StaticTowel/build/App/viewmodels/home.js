@@ -1,1 +1,0 @@
-define(["require","exports","services/logger"],function(e,t,n){var i=n,r=function(){function e(){this.title="Home View"}return e.prototype.activate=function(){return i.logger.log("We are at home now",null,"home",!0),!0},e}();t.ViewModel=r,t.vm=new r,t.activate=function(){return t.vm.activate()}});
