@@ -1,5 +1,5 @@
 ﻿#options outputbundleonly,skipremin
-../../scripts/jquery-1.9.1.min.js
+../../scripts/jquery-2.0.3.js
 ../../scripts/q.min.js
 ../../scripts/knockout-2.3.0.nodebug.js
 ../../scripts/toastr.min.js

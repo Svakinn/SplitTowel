@@ -1,15 +1,14 @@
 /// <reference path="../../Scripts/typings/q/Q.d.ts" />
 /// <reference path="../../Scripts/typings/knockout/knockout.d.ts" />
 define(["require", "exports"], function(require, exports) {
-    
-
     var MenuContainer = (function () {
         function MenuContainer(Id) {
             this.selectedItem = ko.observable(null);
-            this.itemsList = ko.observableArray([]);
+            this.itemsList = ko.observableArray();
             this.id = Id;
         }
         MenuContainer.prototype.selectItem = function (item) {
+            //Start by disselecting previously selected item
             if (this.selectedItem && this.selectedItem() != null && this.selectedItem().id != item.id) {
                 this.selectedItem().isSelected(false);
             }
@@ -42,7 +41,7 @@ define(["require", "exports"], function(require, exports) {
             this.itemsList(newArr);
             if (route)
                 this.selectById(route);
-else if (this.selectedItem() == null && this.itemsList().length > 0)
+            else if (this.selectedItem() == null && this.itemsList().length > 0)
                 this.selectItem(this.itemsList()[0]);
             return Q(true);
         };

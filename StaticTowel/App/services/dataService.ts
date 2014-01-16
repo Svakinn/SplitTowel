@@ -17,7 +17,7 @@ export class DataService {
         this.configBreezeManager();
     }
 
-    private loadArray: KnockoutObservableArray<string> = ko.observableArray();
+    private loadArray: KnockoutObservableArray<string> = ko.observableArray<string>();
     public isLoading: KnockoutObservable<boolean> = ko.observable(false);
     private Manager: breeze.EntityManager;
 

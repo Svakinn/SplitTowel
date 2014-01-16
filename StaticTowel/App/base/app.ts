@@ -21,7 +21,7 @@ export class MainClass  {
     public isLoading: KnockoutComputed<boolean>; //Computed must be declared in the constructor
     public mainMenu: KnockoutObservable<m_menu.MenuContainer>;
 
-    public boot(): Q.IPromise {
+    public boot(): Q.IPromise<any> {
         var my: MainClass = this; //must have handle on the correct scope inside Q function (some like to use the name _self for this)
         m_logger.logger.log('Hot Towel SPA Loaded!', null, 'app', true);
         m_router.on('router:route:not-found', function (fragment) {

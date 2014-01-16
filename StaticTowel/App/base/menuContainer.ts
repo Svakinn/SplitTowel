@@ -17,7 +17,7 @@ export class MenuContainer {
     }
     public id: string;
     public selectedItem: KnockoutObservable<IMenuItem> = ko.observable(null);
-    public itemsList: KnockoutObservableArray<IMenuItem> = ko.observableArray([]);
+    public itemsList: KnockoutObservableArray<IMenuItem> = ko.observableArray<IMenuItem>();
 
     public selectItem(item: IMenuItem) {
         //Start by disselecting previously selected item
@@ -38,7 +38,7 @@ export class MenuContainer {
     }
 
     //Init internal array from menuTemplate 
-    public init(arr: Array<m_conf.IMenuItemTemplate>, IsTooltip: boolean, route: string): Q.IPromise {
+    public init(arr: Array<m_conf.IMenuItemTemplate>, IsTooltip: boolean, route: string): Q.IPromise<any> {
         var newArr = new Array<IMenuItem>();
         //Note using forEach(function (item)) causes this keyword to fall out of scope and is generaly slower to execute
         var i = 0;

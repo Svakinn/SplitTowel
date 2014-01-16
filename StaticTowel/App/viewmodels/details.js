@@ -1,9 +1,5 @@
 /// <reference path="../../Scripts/typings/bootstrap/bootstrap.d.ts" />
-define(["require", "exports", 'services/logger', 'services/dataService'], function(require, exports, __m_logger__, __m_data__) {
-    var m_logger = __m_logger__;
-    
-    var m_data = __m_data__;
-
+define(["require", "exports", 'services/logger', 'services/dataService'], function(require, exports, m_logger, m_data) {
     //The typescript viewmodel class
     var DetailsView = (function () {
         function DetailsView() {

@@ -1,13 +1,6 @@
 /// <reference path="../../Scripts/typings/knockout/knockout.d.ts" />
 /// <reference path="../../Scripts/typings/durandal/durandal.d.ts" />
-define(["require", "exports", 'plugins/router', 'config', 'base/menuContainer', 'services/dataService', 'services/logger'], function(require, exports, __m_router__, __m_conf__, __m_menu__, __m_data__, __m_logger__) {
-    //Handle application data, currenly only the loading indicator and the main menu
-    var m_router = __m_router__;
-    var m_conf = __m_conf__;
-    var m_menu = __m_menu__;
-    var m_data = __m_data__;
-    var m_logger = __m_logger__;
-
+define(["require", "exports", 'plugins/router', 'config', 'base/menuContainer', 'services/dataService', 'services/logger'], function(require, exports, m_router, m_conf, m_menu, m_data, m_logger) {
     var MainClass = (function () {
         function MainClass() {
             this.appTitle = ko.observable('Hot|Split Towel SPA');

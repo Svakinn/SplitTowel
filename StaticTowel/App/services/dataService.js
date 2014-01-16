@@ -1,9 +1,8 @@
 /// <reference path="../../Scripts/typings/breeze/breeze.d.ts" />
 /// <reference path="../../Scripts/typings/q/Q.d.ts" />
 /// <reference path="../../Scripts/typings/knockout/knockout.d.ts" />
-define(["require", "exports", 'config', 'services/logger'], function(require, exports, __m_cfg__, __m_logger__) {
-    var m_cfg = __m_cfg__;
-    var m_logger = __m_logger__;
+define(["require", "exports", 'config', 'services/logger'], function(require, exports, m_cfg, m_logger) {
+    
 
     var DataService = (function () {
         function DataService() {
