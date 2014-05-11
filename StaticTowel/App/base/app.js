@@ -18,6 +18,15 @@ define(["require", "exports", 'plugins/router', 'config', 'base/menuContainer', 
 
             my.mainMenu = ko.observable(new m_menu.MenuContainer('mainMenu'));
 
+            // select proper mainmenu item when starting from a non-home route
+            var initialActivation = m_router.activeInstruction.subscribe(function (nv) {
+                // run only once, unsubscribe from further notifications
+                initialActivation.dispose();
+
+                // set proper menu item according to the current fragment (route)
+                my.mainMenu().selectById(nv.fragment);
+            });
+
             //Using Q for loading the menu is not strictly needed now but.. if we are to load for example the menu texts from service, this is handy
             return Q.when(my.mainMenu().init(m_conf.cfg.mainMenuItems, false, '').then(function (promise) {
                 //The standard Durandal2 startup, once we have our menu up and ready
