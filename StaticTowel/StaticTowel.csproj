@@ -114,6 +114,7 @@
     <Content Include="Scripts\typings\requirejs\require.d.ts" />
     <Content Include="Scripts\typings\toastr\toastr.d.ts" />
     <Content Include="weylandbuild.cmd" />
+    <TypeScriptCompile Include="App\base\viewmodelBase.ts" />
     <TypeScriptCompile Include="App\services\logger.ts" />
     <TypeScriptCompile Include="App\main.ts" />
     <TypeScriptCompile Include="App\config.ts" />

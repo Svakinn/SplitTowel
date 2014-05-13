@@ -21,11 +21,11 @@ define(["require", "exports", 'config', 'services/logger'], function(require, ex
         };
 
         DataService.prototype.configBreezeManager = function () {
-            this.Manager = new breeze.EntityManager(m_cfg.cfg.breezeServiceName);
+            this.manager = new breeze.EntityManager(m_cfg.cfg.breezeServiceName);
             breeze.NamingConvention.none.setAsDefault();
         };
 
-        DataService.prototype.HandleExceptions = function (error, context) {
+        DataService.prototype.handleExceptions = function (error, context) {
             m_logger.logger.logError(error.message, error, context, true);
         };
 
@@ -33,7 +33,7 @@ define(["require", "exports", 'config', 'services/logger'], function(require, ex
             var my = this;
             my.pushLoader();
             var query = breeze.EntityQuery.from('GetCountries');
-            return my.Manager.executeQuery(query).then(querySucceded).fail(queryFailed);
+            return my.manager.executeQuery(query).then(querySucceded).fail(queryFailed);
 
             function querySucceded(data) {
                 if (customerData && data.results) {
@@ -53,7 +53,7 @@ define(["require", "exports", 'config', 'services/logger'], function(require, ex
             }
             function queryFailed(error) {
                 my.popLoader();
-                my.HandleExceptions(error, 'GetCountries');
+                my.handleExceptions(error, 'GetCountries');
                 return Q(false);
             }
         };

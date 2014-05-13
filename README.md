@@ -22,10 +22,11 @@ However it is better run the bundler manually when you need it. For that the VS-
 ![External Tools Setup](ExternalToolsSetup.png)  
 
 
-App.ts:
+app.ts and viewmodelBase.ts:
 -------
 Application module is introduced to make it easier to handle the viewmodel for the app/shell.  
-The app.ts also includes menu object to handle the main menu.
+The app.ts also includes menu object to handle the main menu.  
+viewmodelBase.ts includes base viewmodel class used by the viewmodels.
 
 Web-API 2:
 --------
@@ -39,8 +40,8 @@ This project has been upgraded to use Bootstrap 3 with some nice responsive feat
 Requirements: 
 -------------
 
-1. Visual studio 2012
-2. TypeScript, latest version, currently 0.9.5 
+1. Visual studio 2012 or 2013
+2. TypeScript, recent version, currently 1.0.0 or 1.0.1 
 
 Durandal Weyland Compile (Optional)
 -----------------------------------

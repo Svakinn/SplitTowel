@@ -1,18 +1,18 @@
 /// <reference path="../../Scripts/typings/toastr/toastr.d.ts" />
 /// <reference path="../../Scripts/typings/durandal/durandal.d.ts" />
 define(["require", "exports", 'durandal/system'], function(require, exports, _system) {
-    var loggerClass = (function () {
-        function loggerClass() {
+    var LoggerClass = (function () {
+        function LoggerClass() {
         }
-        loggerClass.prototype.log = function (message, data, source, showToast) {
+        LoggerClass.prototype.log = function (message, data, source, showToast) {
             this.logIt(message, data, source, showToast, 'info');
         };
 
-        loggerClass.prototype.logError = function (message, data, source, showToast) {
+        LoggerClass.prototype.logError = function (message, data, source, showToast) {
             this.logIt(message, data, source, showToast, 'error');
         };
 
-        loggerClass.prototype.logIt = function (message, data, source, showToast, toastType) {
+        LoggerClass.prototype.logIt = function (message, data, source, showToast, toastType) {
             source = source ? '[' + source + '] ' : '';
             if (data) {
                 _system.log(source, message, data);
@@ -27,10 +27,10 @@ define(["require", "exports", 'durandal/system'], function(require, exports, _sy
                 }
             }
         };
-        return loggerClass;
+        return LoggerClass;
     })();
-    exports.loggerClass = loggerClass;
+    exports.LoggerClass = LoggerClass;
 
-    exports.logger = new loggerClass();
+    exports.logger = new LoggerClass();
 });
 //# sourceMappingURL=logger.js.map

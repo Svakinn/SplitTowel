@@ -4,6 +4,7 @@
 
 import m_cfg = require('config');
 import m_logger = require('services/logger');
+//import m_base = require('base/viewmodelBase');
 
 //Since we do not have coutries in Metadata we provide interface for consumer of the service
 export interface ICountry {
@@ -19,7 +20,7 @@ export class DataService {
 
     private loadArray: KnockoutObservableArray<string> = ko.observableArray<string>();
     public isLoading: KnockoutObservable<boolean> = ko.observable(false);
-    private Manager: breeze.EntityManager;
+    private manager: breeze.EntityManager;
 
     private pushLoader() {
         this.loadArray.push('.');
@@ -32,11 +33,11 @@ export class DataService {
     }
 
     public configBreezeManager() {
-        this.Manager = new breeze.EntityManager(m_cfg.cfg.breezeServiceName);
+        this.manager = new breeze.EntityManager(m_cfg.cfg.breezeServiceName);
         breeze.NamingConvention.none.setAsDefault();
     }
 
-    private HandleExceptions(error: any, context: string) {
+    private handleExceptions(error: any, context: string) {
         m_logger.logger.logError(error.message, error, context, true);
     }
 
@@ -44,7 +45,7 @@ export class DataService {
         var my: DataService = this; //Need this for the eventhandlers since 'this' may have another scope when executed
         my.pushLoader();
         var query: breeze.EntityQuery = breeze.EntityQuery.from('GetCountries');
-        return my.Manager.executeQuery(query).then(querySucceded).fail(queryFailed);
+        return my.manager.executeQuery(query).then(querySucceded).fail(queryFailed);
 
         function querySucceded(data) {
             if (customerData && data.results) {
@@ -64,10 +65,40 @@ export class DataService {
         }
         function queryFailed(error) {
             my.popLoader();
-            my.HandleExceptions(error, 'GetCountries');
+            my.handleExceptions(error, 'GetCountries');
             return Q(false);
         }
     }
+
+    //Finally example on how application text retreival function could look like:
+    //public getTexts(context: string, texts: KnockoutObservableArray<m_base.ITextItem>, manager?: breeze.EntityManager): Q.Promise<any> {
+    //    var my = this;
+    //    var man = manager;
+    //    if (!man)
+    //        man = this.manager; //By default
+    //    my.pushLoader();
+    //    var query: breeze.EntityQuery = breeze.EntityQuery.from('GetTexts/' + context);
+    //    return man.executeQuery(query).then(querySucceded).fail(queryFailed);
+    //
+    //    function querySucceded(data) {
+    //        if (data.results.length > 0) {
+    //            if (texts) {
+    //                var arr: Array<m_base.ITextItem> = new Array();
+    //                data.results.forEach(entry=> {
+    //                    arr.push({ id: entry.Id, value: ko.observable(entry.Value) });
+    //                });
+    //                texts(arr);
+    //            }
+    //        }
+    //        my.popLoader();
+    //        return Q.resolve(true);
+    //    }
+    //
+    //    function queryFailed(error) {
+    //        my.popLoader();
+    //        return m_logger.logger.logError(error.message, error, 'Dataservice', true);
+    //    }
+    //}
 }
 
 export var ctx = new DataService();

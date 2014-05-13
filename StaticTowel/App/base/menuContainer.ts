@@ -12,8 +12,8 @@ export interface IMenuItem {
 }
 
 export class MenuContainer {
-    constructor(Id: string) {
-        this.id = Id;
+    constructor(id: string) {
+        this.id = id;
     }
     public id: string;
     public selectedItem: KnockoutObservable<IMenuItem> = ko.observable(null);
@@ -30,7 +30,7 @@ export class MenuContainer {
     }
 
     public selectById(id: string) {
-        var match: IMenuItem = ko.utils.arrayFirst(this.itemsList(), function (item) {
+        var match: IMenuItem = ko.utils.arrayFirst(this.itemsList(), (item) => {
             return item.id === id;
         });
         if (match)
@@ -38,14 +38,14 @@ export class MenuContainer {
     }
 
     //Init internal array from menuTemplate 
-    public init(arr: Array<m_conf.IMenuItemTemplate>, IsTooltip: boolean, route: string): Q.IPromise<any> {
+    public init(arr: Array<m_conf.IMenuItemTemplate>, isTooltip: boolean, route: string): Q.Promise<any> {
         var newArr = new Array<IMenuItem>();
         //Note using forEach(function (item)) causes this keyword to fall out of scope and is generaly slower to execute
         var i = 0;
         for (var tot = arr.length; i < tot; i++) {
             var item = arr[i];
             var tTip = ko.observable('');
-            if (IsTooltip)
+            if (isTooltip)
                 tTip(item.toolTip);
             newArr.push({ id: item.id, route: item.route, name: ko.observable(item.id), toolTip: tTip, isSelected: ko.observable(false) });
         }

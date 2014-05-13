@@ -2,10 +2,10 @@
 /// <reference path="../../Scripts/typings/knockout/knockout.d.ts" />
 define(["require", "exports"], function(require, exports) {
     var MenuContainer = (function () {
-        function MenuContainer(Id) {
+        function MenuContainer(id) {
             this.selectedItem = ko.observable(null);
             this.itemsList = ko.observableArray();
-            this.id = Id;
+            this.id = id;
         }
         MenuContainer.prototype.selectItem = function (item) {
             //Start by disselecting previously selected item
@@ -26,7 +26,7 @@ define(["require", "exports"], function(require, exports) {
         };
 
         //Init internal array from menuTemplate
-        MenuContainer.prototype.init = function (arr, IsTooltip, route) {
+        MenuContainer.prototype.init = function (arr, isTooltip, route) {
             var newArr = new Array();
 
             //Note using forEach(function (item)) causes this keyword to fall out of scope and is generaly slower to execute
@@ -34,7 +34,7 @@ define(["require", "exports"], function(require, exports) {
             for (var tot = arr.length; i < tot; i++) {
                 var item = arr[i];
                 var tTip = ko.observable('');
-                if (IsTooltip)
+                if (isTooltip)
                     tTip(item.toolTip);
                 newArr.push({ id: item.id, route: item.route, name: ko.observable(item.id), toolTip: tTip, isSelected: ko.observable(false) });
             }

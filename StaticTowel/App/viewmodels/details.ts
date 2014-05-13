@@ -1,13 +1,12 @@
 /// <reference path="../../Scripts/typings/bootstrap/bootstrap.d.ts" />
 
-import m_logger = require('services/logger');
-import m_system = require('durandal/system');
-import m_data = require('services/dataService');
-
+import m_data = require('services/dataService'); //Need this for the interfaces, even thoug the ctx is accessible throug the app
+import m_base = require('base/viewmodelBase');
 
 //The typescript viewmodel class
-export class DetailsView {
-    constructor() {
+export class DetailsView extends m_base.ViewModelView {
+    constructor(modelId: string) {
+        super(modelId);
         //Note that computeds and subscriptions should be initialized in constructor or activate function in typescript viewmodel class
         this.compTitle = ko.computed(function () {
             return this.title() + ' (computed)';
@@ -34,12 +33,11 @@ export class DetailsView {
     public activate() {
         var my = this;
         this.title('My title');
-        m_logger.logger.log('Details View Activated', null, 'details', true);
+        this.app.logger.log('Details View Activated', null, my.modelId, true);
         
         //Note: remember that when waiting for data i.e. from service query, the promise should be returned instead of the "true" value
-        return Q.when(m_data.ctx.getCountries(my.countries)).then(function (promise)
-        {
-            my.activateToolTips();
+        return Q.when(my.app.ctx.getCountries(my.countries)).then(() => {
+            this.activateToolTips();
             return Q(true);
         });
     }
@@ -48,10 +46,13 @@ export class DetailsView {
     }
 }
 //Export oru viewmodel to the DOM as vm
-export var vm = new DetailsView();
+export var vm = new DetailsView('details');
 
 //The Durandal plugin-interface. 
+export var activate = () => vm.activate();
+export var deactivate = () => vm.deactivate();
 //Note that in previous version of Durandal the attached() was named viewAttached()
-export var activate = function () { return vm.activate(); };
-export var attached = function (view, parent) { vm.viewAttached(view); }
+export var attached = view=> vm.viewAttached(view);
+export var canActivate = () => vm.canActivate();
+export var canDeactivate = () => vm.canDeactivate();
 
