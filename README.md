@@ -49,7 +49,7 @@ Would you like to build the client project into just 5 files?
 Well you can do that using the Durandal weyland compile to compile the entire App directory plus the required Durandal scripts into one file.
 To do this you need to install **node.js** and the **weyland package** for node.js.  
 *Note: you only have to do the following set-up process if you intend to modify the project and compile the changes for weyland. You can still run the original weyland file that ships with the project by running the index_weyland.html page.*   
-See here for directions for how to set-up weyland compile: [http://durandaljs.com/documentation/Building-with-Weyland/](http://durandaljs.com/documentation/Building-with-Weyland/ "Durandal weyland documentation")  
+See here for directions for how to set-up weyland compile: [http://durandaljs.com/documentation/Building-with-Weyland/](http://durandaljs.com/documentation/Weyland.html "Durandal weyland documentation")  
 The node.js can be installed from here:
 [http://nodejs.org/download/](http://nodejs.org/download/ "Download node.js")  
 Then install the weyland plugin by running the following command line:
